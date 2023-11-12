@@ -3,7 +3,12 @@
 #include <stdio.h>
 #include <unistd.h>
 
+/**
+*binary - you are to print the binary representation of an unsigned integer
+*parameter: convert this unsigned integer
+*/
 
+void binaryprint(int num unsigned)
 
 
 
