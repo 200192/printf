@@ -3,10 +3,10 @@
 #include <stdlib.h>
 
 
-int _printf(const char *format, ...)
+
 
 /**
- *for printing - to check if char is printable
+ *
  *evaluating the character - c
  *
  *
