@@ -23,12 +23,8 @@
 int print_format(char specifier, va_list ap) {
 int print = 0;
 
-if (specifier == '%')
-{
 
-print += write(STDOUT_FILENO, "%", 1);
-}
-else if (specifier == 'c') 
+if (specifier == 'c') 
 {
  print += print_char(va_arg(ap, int));
 } else if (specifier == 's') 
@@ -51,9 +47,9 @@ else if(specifier == 'i')
 {
 print +=print_digit(va_arg(ap,int), 10);
 }
-else 
-{
- print += write(1, "%", 1);
-										  }
+else {
+	print += write(1, "%", 1);
+
+}
 return print;
 }

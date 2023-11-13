@@ -45,4 +45,5 @@ int print_digit(long n, int base)
       count = print_digit(n / base, base);
       return count + print_digit(n % base, base);
     }
+  return (0);
 }
