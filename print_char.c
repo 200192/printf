@@ -15,7 +15,12 @@
 
 int print_char(char c)
 {
-	
-
+if (c != '\0')
+{
 return (write(1, &c, 1));
+}
+else 
+{
+return (-1);
+}
 }
