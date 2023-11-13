@@ -22,7 +22,12 @@
  *                  */
 int print_format(char specifier, va_list ap) {
 int print = 0;
-if (specifier == 'c') 
+
+if (specifier == '%')
+{
+print += write(STDOUT_FILENO, "%", 1);
+}
+else if (specifier == 'c') 
 {
  print += print_char(va_arg(ap, int));
 } else if (specifier == 's') 
