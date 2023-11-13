@@ -2,7 +2,7 @@
 #include "main.h"
 #include <stdio.h>
 #include <unistd.h>
-
+#include <string.h>
 
 
 
@@ -37,7 +37,12 @@ return (-1);
   count = 0;
   while (*format)
     {
-	if (*format == '%' && *(format + 1) == ' ')
+	if (*format == '%')
+	{
+	if(strlen(format) == 1)
+	write(1, "%", 1);
+	}
+	else if (*format == '%' && *(format + 1) == ' ')
 	{
 	va_end(ap);
 	return (-1);

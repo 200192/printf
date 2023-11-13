@@ -25,6 +25,7 @@ int print = 0;
 
 if (specifier == '%')
 {
+
 print += write(STDOUT_FILENO, "%", 1);
 }
 else if (specifier == 'c') 
