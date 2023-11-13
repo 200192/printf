@@ -41,6 +41,10 @@ else if (specifier == 'p')
 {
 print += p_a(va_arg(ap, void*));
 }
+else if(specifier == 'i')
+{
+print +=print_digit(va_arg(ap,int), 10);
+}
 else 
 {
  print += write(1, &specifier, 1);
