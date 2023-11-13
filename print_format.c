@@ -36,7 +36,11 @@ print += print_digit(va_arg(ap, int), 10);
 else if (specifier == 'x') 
 {
 print += print_digit(va_arg(ap, unsigned int), 16);
-} 
+}
+else if (specifier == 'p')
+{
+print += p_a(va_arg(ap, void*));
+}
 else 
 {
  print += write(1, &specifier, 1);
