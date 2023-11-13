@@ -33,28 +33,33 @@ return (-1);
 }
 
 
-  va_start(ap, format);
-  count = 0;
-  while (*format)
-    {
-	
- if (*format == '%' && *(format + 1) == ' ')
-	{
-	va_end(ap);
-	return (-1);
-	}
-	else if (*format == '%' && *(format + 1) == '\0')
-	{
-	va_end(ap);
-	return (-1);
-	}
-	
-	else  if (*format == '%')
-	count += print_format(*++format, ap);
-      else
-	count += write(STDOUT_FILENO, format, 1);
-      ++format;
-    }
-  va_end(ap);
-  return count;
+va_start(ap, format);
+count = 0;
+while (*format)
+{
+if (*format == '%' && *(format + 1) == ' ')
+{
+va_end(ap);
+return (-1);
+}
+else if (*format == '%' && *(format + 1) == '\0')
+{
+va_end(ap);
+return (-1);
+}
+
+
+
+if(*format == '%')
+{
+count += print_format(*++format, ap);
+}
+
+count+= write(1, format, 1);
+++format;
+
+
+}
+va_end(ap);
+return count;
 }

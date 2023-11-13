@@ -3,23 +3,23 @@
 #include <unistd.h>
 #include <stdarg.h>
 /**
- *  *
- *   *
- *    *
- *     *
- *      *
- *       *
- *        *
- *         *
- *          *
- *           *
- *            *
- *             *
- *              *
- *               *
- *                *
- *                 *
- *                  */
+ *  
+ *   
+ *    
+ *     
+ *      
+ *      
+ *        
+ *         
+ *          
+ *           
+ *            
+ *             
+ *              
+ *              
+ *               
+ */
+
 int print_format(char specifier, va_list ap) {
 int print = 0;
 
@@ -53,7 +53,7 @@ print +=print_digit(va_arg(ap,int), 10);
 }
 else 
 {
- print += write(1, &specifier, 1);
+ print += write(1, "%", 1);
 										  }
 return print;
 }
