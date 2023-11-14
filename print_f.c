@@ -37,7 +37,6 @@ int _printf(const char *format, ...)
   count = 0;
   while (*format)
     {
-     
       if(*format){
       if (*format == '%' && *(format + 1) == ' ')
 	{
@@ -52,20 +51,17 @@ int _printf(const char *format, ...)
       }
 
        if (*format == '%' && *(format + 1) != '\0')
-       {	
+       {
 	count += print_format(*++format, ap);
+
        }
-      
       else
-  {	 
- count += write(1, format, 1);
+  {
+  count += write(1, format, 1);
  }
 
 ++format;
-     	
-    
-    }   
+    }
   va_end(ap);
   return count;
-
 }
